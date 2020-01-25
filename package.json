@@ -11,6 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "contentful": "^7.13.1",
+    "dotenv": "^8.2.0",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {}
