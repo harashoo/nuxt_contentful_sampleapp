@@ -1,15 +1,37 @@
 <template>
-  <article class="card">
+  <div>
     <nuxt-link
-      :to="{ name: 'blog-slug'}"
+      :to="{ name: 'blog-slug', params: {
+        sys: id
+      }}"
       class="wrapper"
     >
-      <h1 class="card_title">記事１</h1>
-      <p class="card_text">記事の内容。ああああああああああああああああああ</p>
-      <p class="card_date">2018/8/2</p>
+      <article class="card">
+        <h1 class="card_title">{{ title }}</h1>
+        <p class="card_text">{{ id }}</p>
+        <p class="card_date">{{ date }}</p>
+      </article>
     </nuxt-link>
-  </article>
+  </div>
 </template>
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    id: {
+      type: String,
+      default: ''
+    },
+    date: {
+      type: String,
+      default: ''
+    }
+  }
+}
+</script>
 
 <style scoped>
 .card {
